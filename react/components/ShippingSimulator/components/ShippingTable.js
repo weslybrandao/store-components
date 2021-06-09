@@ -1,9 +1,9 @@
-import React from 'react'
 import PropTypes from 'prop-types'
+import React from 'react'
 import { FormattedMessage } from 'react-intl'
 
-import ShippingTableRow from './ShippingTableRow'
 import styles from '../shippingSimulator.css'
+import ShippingTableRow from './ShippingTableRow'
 
 const ShippingTable = ({ shipping }) => {
   if ((shipping?.logisticsInfo?.length ?? 0) === 0) {
@@ -44,7 +44,7 @@ const ShippingTable = ({ shipping }) => {
           </th>
         </tr>
       </thead>
-      <tbody className={styles.shippingTableBody}>
+      <tbody className={`${styles.shippingTableBody} ${styles.shippingPickup}`}>
         {slaList.map(shippingItem => (
           <ShippingTableRow
             key={shippingItem.id}
